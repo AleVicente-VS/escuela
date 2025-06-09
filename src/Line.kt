@@ -3,7 +3,7 @@ data class Line(
     val endPoint : Point
 
 ){
-    fun print(){
+    fun print(){    //enlazado a Line, print() es una función miembro que imprime los puntos que forman la línea.
         println("punto a: ${startPoint}, punto b: ${endPoint}")
     }
 }
