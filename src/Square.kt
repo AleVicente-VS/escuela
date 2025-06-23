@@ -2,7 +2,7 @@ class Square(
     val length: Int,
     override val originX: Int = 0,
     override val originY: Int = 0
-): Shape, Drawable{
+): Shape, Drawable {
     override val name: String
         get() = Square::class.simpleName.orEmpty()
     override val lines: List<Line>
@@ -19,12 +19,13 @@ class Square(
         )
     }
 
-    /*override fun draw() {
+    override fun draw() {
+        super.draw()
         val rows = originY + length
         val columns = originX + length
 
         for (y in 0..rows) {
-            for (x in 0..columns) {
+            for (x in 0.rangeTo(columns)) {
                 val edges =
                     (x == originX || x == originX + length) && y in originY..originY + length ||
                             (y == originY || y == originY + length) && x in originX..originX + length
@@ -33,7 +34,8 @@ class Square(
             }
             println()
         }
-    }*/
+    }
+
 }
 
 /*

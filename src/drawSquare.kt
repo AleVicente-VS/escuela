@@ -1,4 +1,4 @@
-class drawSquare(val square: Square) : Drawable {
+/*class drawSquare(val square: Square) : Drawable {
     override fun draw() {
         val rows = square.originY + square.length
         val columns = square.originX + square.length
@@ -14,4 +14,4 @@ class drawSquare(val square: Square) : Drawable {
             println()
         }
     }
-}
+}*/

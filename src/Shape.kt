@@ -9,7 +9,9 @@ interface Shape: Drawable  {   //Shape hereda de Drawable
         lines.onEach { line ->    //recorre las líneas que componen la figura (.onEach ejecuta un bloque de código por cada elemento de la lista
             line.print()
         }
+
     }
+
 }
 
 interface Drawable{

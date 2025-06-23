@@ -1,12 +1,13 @@
 fun main() {
     val square = Square(length = 6, originX = 6, originY = 6)
     val triangle = Traingle(length = 10, originX = 6, originY = 6)
+    val hexagon = Hexagon(length = 6, originX = 10, originY = 10)
     //val shapes: List<Shape> = listOf(square, triangle)
 
-    val shapes: List<Drawable> = listOf(square,triangle)
-    val drawerSquare = drawSquare(square)
+    val shapes: List<Drawable> = listOf(square,triangle, hexagon)
+    /*val drawerSquare = drawSquare(square)
     val drawerTriangle = drawTriangle(triangle)
-    val drawers: List<Drawable> = listOf(drawerSquare, drawerTriangle)
+    val drawers: List<Drawable> = listOf(drawerSquare, drawerTriangle)*/
 
 
     shapes.onEach {  //forma concisa para recorrer una lista de figuras y dibujar cada una al llamar al metodo draw()
@@ -14,6 +15,6 @@ fun main() {
         //drawer.draw()
         //drawerT.draw()
     }
-    drawers.onEach { it.draw() }
+
 }
 

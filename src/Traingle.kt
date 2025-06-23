@@ -16,4 +16,29 @@ class Traingle(
             Line(startPoint = Point(x +length, y + length), endPoint = Point(x ,y))
         )
     }
+    override fun draw() {
+        super.draw()
+        val base = length
+        val originX = originX
+        val originY = originY
+
+        val rows = originY + base
+        val columns = originX + base
+
+        for (y in 0..rows) {
+            for (x in 0..columns) {
+                val withinTriangle = x >= originX && x <= originX + (y - originY) && y in originY..originY + base
+                val isEdge = x == originX || y == originY + base || x == originX + (y - originY)
+
+                print(
+                    when {
+                        isEdge && withinTriangle -> "*"
+                        withinTriangle -> " "
+                        else -> " "
+                    }
+                )
+            }
+            println()
+        }
+    }
 }

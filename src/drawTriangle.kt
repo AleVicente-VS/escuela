@@ -1,4 +1,4 @@
-class drawTriangle(val triangle: Traingle): Drawable{
+/*class drawTriangle(val triangle: Traingle): Drawable{
 
     override fun draw() {
         val base = triangle.length
@@ -24,4 +24,4 @@ class drawTriangle(val triangle: Traingle): Drawable{
             println()
         }
     }
-}
+}*/
