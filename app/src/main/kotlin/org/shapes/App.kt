@@ -3,8 +3,6 @@
  */
 package org.shapes
 
-import org.shapes.domain.Drawable
-import org.shapes.domain.Hexagon
 import org.shapes.domain.Square
 import org.shapes.domain.Traingle
 
@@ -15,22 +13,36 @@ class App {
         }
 }
 
-fun main() {
-    println(App().greeting)
+/**
+ * args
+ *  "square", "triangle", "hexagon"
+ */
+enum class ShapeInput {
+    square,
+    triangle,
+    hexagon
+}
 
-    val square = Square(length = 6, originX = 6, originY = 6)
-    val triangle = Traingle(length = 10, originX = 6, originY = 6)
-    val hexagon = Hexagon(length = 6, originX = 10, originY = 10)
-    //val shapes: List<Shape> = listOf(square, triangle)
+fun main(args: Array<String>) {
+    if (args.isEmpty()) {
+        println("No args received")
+        return
+    }
+    args.onEach { shape ->
+        when (shape) {
+            ShapeInput.square.name -> {
+                val square = Square(length = 6, originX = 6, originY = 6)
+                square.draw()
+            }
 
-    val shapes: List<Drawable> = listOf(square,triangle, hexagon)
-    /*val drawerSquare = drawSquare(square)
-    val drawerTriangle = drawTriangle(triangle)
-    val drawers: List<Drawable> = listOf(drawerSquare, drawerTriangle)*/
+            ShapeInput.triangle.name -> {
+                val triangle = Traingle(length = 10, originX = 6, originY = 6)
+                triangle.draw()
+            }
 
-
-    shapes.onEach {  //forma concisa para recorrer una lista de figuras y dibujar cada una al llamar al metodo draw()
-        it.draw()    //it es una forma abreviada de referirse al elemento actual en la iteración (cada Shape).
-        //drawer.draw()
-        //drawerT.draw()
-    }}
+            else -> {
+                println("Shape not found.")
+            }
+        }
+    }
+}

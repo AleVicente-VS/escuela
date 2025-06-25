@@ -7,9 +7,8 @@ interface Shape: Drawable {   //Shape hereda de Drawable
     val lines: List<Line>
 
     override fun draw() {    //sobrescritura del metodo de interfaz
-        println(name)
         lines.onEach { line ->    //recorre las líneas que componen la figura (.onEach ejecuta un bloque de código por cada elemento de la lista
-            line.print()
+            println(line)
         }
 
     }

@@ -39,10 +39,3 @@ class Square(
     }
 
 }
-
-/*
-Square::class   Referencia a la clase Square
-.simpleName obtiene el nombre simple de la clase como String
-.orEmpty() Devuelve la cadena obtenida o una cadena vacía ("") si es null
-
- */

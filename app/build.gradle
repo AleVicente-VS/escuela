@@ -38,9 +38,10 @@ java {
     }
 }
 
-application {
-    // Define the main class for the application.
-    mainClass = 'org.example.AppKt'
+tasks.jar {
+    manifest {
+        attributes["Main-Class"] = "org.shapes.AppKt"
+    }
 }
 
 tasks.named('test') {
